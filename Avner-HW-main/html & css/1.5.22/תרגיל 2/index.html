@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        header {
+            height: 10vh;
+            background-color: black;
+            color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #burger {
+            display: none;
+            font-size: 40px;
+            position: absolute;
+            right: -40px;
+            transition: 1s all ease;
+        }
+        
+        #menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        li {
+            text-align: center;
+            padding: 15px;
+            color: white;
+            border-bottom: 3px solid rgba(255, 255, 0, 0);
+            user-select: none;
+            cursor: pointer;
+        }
+        
+        li:hover:not(#sub-menu li) {
+            border-bottom: 3px solid rgb(255, 255, 0);
+            color: yellow;
+        }
+        
+        #sub-menu-papa {
+            position: relative;
+            display: block;
+        }
+        
+        #sub-menu {
+            left: -20px;
+            top: 45px;
+            position: absolute;
+            display: none;
+        }
+        
+        #sub-menu>li {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        #sub-menu-papa:hover #sub-menu {
+            display: block;
+        }
+        
+        @media screen and (max-width: 800px) {
+            .flex-row {
+                display: block;
+            }
+            nav {
+                position: fixed;
+                left: -100px;
+                background-color: black;
+                top: 0;
+                transition: 1s transform ease;
+            }
+            #menu {
+                display: block;
+            }
+            #burger {
+                display: inline-block;
+            }
+            nav:hover {
+                transform: translateX(100px);
+            }
+            nav:hover #burger {
+                transform: rotate(90deg)
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <i id="burger" class="fa-solid fa-bars"></i>
+            <ul id="menu">
+                <li>Home</li>
+                <li>About</li>
+                <li id="sub-menu-papa">
+                    Services
+                    <ul id="sub-menu">
+                        <li>Programming</li>
+                        <li>Design</li>
+                        <li>Sleeping</li>
+                    </ul>
+                </li>
+                <li>Contact</li>
+                <li>Socials</li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>

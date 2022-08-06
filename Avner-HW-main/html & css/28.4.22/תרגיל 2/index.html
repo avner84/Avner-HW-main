@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        #menu li {
+            display: inline;
+            padding-left: 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        header {
+            height: 20vh;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.png" alt="logo" style="border: 3px solid blue; height: 100%; border-radius: 50px ;" />
+
+        <nav>
+            <ul id="menu" style="padding-top: 25px">
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Skills</a>
+                </li>
+                <li>
+                    <a href="">Contact us</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div style="margin-right: 10px; padding-top: 10px; position: relative;">
+            <img src="images/me.jpg" alt="me" style="height: 70%; border-radius: 50%; z-index: 1">
+            <div style="width: 25px; height: 25px; background-color: rgb(19, 199, 46); border: 1px solid black; border-radius: 50%; text-align: center; padding-top: 4%; font-weight: bolder; position:absolute; z-index: 999; top: 5px; right: 0px;"> 5</div>
+            <div style="height:20% ; display: flex; justify-content: space-between; padding-top: 5%;">
+                <i class="fa-solid fa-gear" style="font-size: 0.9rem; display: inline;"></i>
+                <p style="font-weight: bold; font-size: 0.75rem; padding-top: 0px; margin-top: 0px; display: inline;
+                vertical-align: top;">Sing out</p>
+            </div>
+        </div>
+
+    </header>
+</body>
+
+</html>

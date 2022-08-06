@@ -1,0 +1,97 @@
+                    #container {
+                        width: 70vw;
+                        height: 78vh;
+                        background-color: black;
+                        border: 5px solid rgb(46, 227, 46);
+                        border-radius: 30px;
+                        position: relative;
+                    }
+                    
+                    #smallDiv {
+                        width: 80px;
+                        height: 50px;
+                        background-color: red;
+                        position: absolute;
+                        top: 5%;
+                        left: 3%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 700;
+                        user-select: none;
+                        cursor: crosshair;
+                        animation: rotateDiv 2s infinite linear;
+                    }
+                    
+                    @keyframes rotateDiv {
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                    
+                    body {
+                        background-color: rgb(242, 229, 190);
+                        font-family: Arial, Helvetica, sans-serif;
+                        user-select: none;
+                    }
+                    
+                    main {
+                        width: 90%;
+                        margin: auto;
+                    }
+                    
+                    header {
+                        background-color: aqua;
+                        text-align: center;
+                        height: 13vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    
+                    h1 {
+                        font-size: 3em;
+                        color: purple;
+                    }
+                    
+                    #dashboard {
+                        width: 16vw;
+                        height: 78vh;
+                        background-color: rgb(0, 179, 255);
+                        border-radius: 20px;
+                        border: 5px solid rgb(246, 163, 163);
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    
+                    #subMain {
+                        display: flex;
+                        justify-content: space-between;
+                        padding-top: 20px;
+                    }
+                    
+                    #dashboard>div {
+                        background-color: white;
+                        margin-top: 0.5em;
+                        margin-left: 0.35em;
+                        margin-right: 0.35em;
+                        border-radius: 10px;
+                    }
+                    
+                    #dashboard p,
+                    h3,
+                    h5 {
+                        margin: 0.4em;
+                    }
+                    
+                    .h5WinnerDetails {
+                        display: flex;
+                        justify-content: space-between;
+                        padding-right: 30px;
+                        padding-left: 20px;
+                        color: blue;
+                    }
+                    
+                    p {
+                        font-size: 0.95rem;
+                    }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+
+
+    <style>
+        img {
+            position: absolute;
+        }
+        
+        #pedal {
+            top: 20%;
+            left: 8%;
+        }
+        
+        #needle {
+            top: 14.5%;
+            left: 53.9%;
+            transform: rotateZ(230deg);
+            transform-origin: 50% 80%;
+        }
+        
+        #pedal:hover {
+            transform: rotateX(50deg);
+            transition: 1s transform ease;
+        }
+        
+        #pedal:hover+#needle {
+            transform: rotateZ(350deg);
+            transition: 2s transform ease;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/tachometer.png" alt="tachometer" />
+    <img id="pedal" src="images/pedal.png" alt="pedal" />
+    <img id="needle" src="images/needle.png" alt="needle" />
+</body>
+
+
+
+</html>

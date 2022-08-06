@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .a,
+        .b {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            border: 2px solid green;
+            display: inline-block;
+            margin: 130px;
+        }
+        
+        .abc {
+            background-color: salmon;
+        }
+        
+        .abc:hover .a {
+            background-color: lightgreen;
+        }
+        
+        .abc:hover #itemb {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <div class="abc">
+        <div class="a" id="itema"></div>
+        <div class="b" id="itemb"></div>
+    </div>
+</body>
+
+</html>

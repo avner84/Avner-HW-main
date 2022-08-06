@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(220, 243, 243);
+    user-select: none;
+}
+
+.table {
+    width: 50%;
+    margin: auto;
+    border: 1px solid black;
+}
+
+h1 {
+    font-weight: 700;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+a {margin-left:20px ;
+   
+}
+
+nav {
+    position: relative;
+    left: 40px;
+    top: 40px;
+}

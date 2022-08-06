@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        #contener {
+            border: 2px solid white;
+            background-color: white;
+            width: 40vw;
+            height: 60vh;
+            position: absolute;
+            top: 20%;
+            left: 30%;
+        }
+        
+        .bigEye {
+            background-color: white;
+            border: 1px solid black;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            top: 120px;
+            left: 120px;
+        }
+        
+        .smallEye {
+            background-color: rgb(76, 175, 221);
+            border: 1px solid black;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            position: relative;
+            top: 30%;
+            left: 30%;
+            animation: eyesMoving 6s linear;
+        }
+        
+        .pupil {
+            background-color: black;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            position: relative;
+            top: 30%;
+            left: 30%;
+            animation: eyesMoving2 6s linear;
+        }
+        
+        @keyframes eyesMoving {
+            0% {
+                top: 30%;
+            }
+            11% {
+                top: 55%;
+            }
+            22% {
+                top: 5%;
+            }
+            33% {
+                top: 55%;
+            }
+            45% {
+                top: 30%;
+                left: 30%;
+            }
+            57% {
+                left: 5%;
+                ;
+            }
+            72% {
+                left: 55%;
+            }
+            90% {
+                left: 5%;
+            }
+            100% {
+                left: 30%;
+            }
+        }
+        
+        @keyframes eyesMoving2 {
+            0% {
+                top: 30%;
+            }
+            11% {
+                top: 55%;
+            }
+            22% {
+                top: 5%;
+            }
+            33% {
+                top: 55%;
+            }
+            45% {
+                top: 30%;
+                left: 30%;
+            }
+            57% {
+                left: 5%;
+                ;
+            }
+            72% {
+                left: 55%;
+            }
+            90% {
+                left: 5%;
+            }
+            100% {
+                left: 30%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="contener">
+        <div id="leftEye" class="bigEye">
+            <div class="smallEye">
+                <div class="pupil"></div>
+            </div>
+        </div>
+        <div id="rightEye" class="bigEye">
+            <div class="smallEye">
+                <div class="pupil"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

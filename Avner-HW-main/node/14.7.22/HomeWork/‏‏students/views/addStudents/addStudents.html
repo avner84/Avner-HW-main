@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="addStudents.css">
+    <title>Add students</title>
+</head>
+
+<body>
+    <nav>
+        <a href="/class"><button>View student list</button> </a>
+        <a href="/delete"><button>Delete Students page</button></a>
+        <a href="/update"><button>Update Students page</button></a>
+    </nav>
+
+    <h1>Add Students</h1>
+
+    <form action="#">
+        <label for="StudentId">ID:</label><br>
+        <input type="number" id="StudentId" name="id"><br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age"><br>
+        <label for="average">Average:</label><br>
+        <input type="number" id="average" name="average"><br><br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+
+
+
+    <script src="addStudents.js"></script>
+</body>
+
+</html>

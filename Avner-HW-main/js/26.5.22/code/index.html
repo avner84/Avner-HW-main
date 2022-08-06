@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        main {
+            text-align: center;
+        }
+        
+        #container {
+            margin: 10px auto;
+            background-color: rgb(177, 236, 236);
+            border-radius: 20px;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px 5px;
+        }
+        
+        .digit {
+            font-size: 2.5em;
+            border: 3px solid rgb(104, 127, 190);
+            width: 30%;
+            border-radius: 20px;
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    </style>
+    <title>Code</title>
+</head>
+
+<body>
+    <main>
+        <div id="step1">
+            <input type="number" id="codeInput" placeholder="Enter Your Code" />
+            <button onclick="enterCode()">submit</button>
+        </div>
+        <div id="step2" style="display: none;">
+            <h1>Verify the code</h1>
+            <div id="container">
+                <div class="digit" id="1" onclick="checkCode(this)">1</div>
+                <div class="digit" id="2" onclick="checkCode(this)">2</div>
+                <div class="digit" id="3" onclick="checkCode(this)">3</div>
+                <div class="digit" id="4" onclick="checkCode(this)">4</div>
+                <div class="digit" id="5" onclick="checkCode(this)">5</div>
+                <div class="digit" id="6" onclick="checkCode(this)">6</div>
+                <div class="digit" id="7" onclick="checkCode(this)">7</div>
+                <div class="digit" id="8" onclick="checkCode(this)">8</div>
+                <div class="digit" id="9" onclick="checkCode(this)">9</div>
+                <div class="digit" id="0" onclick="checkCode(this)">0</div>
+            </div>
+        </div>
+
+    </main>
+    <script src="js/script.js "></script>
+</body>
+
+</html>

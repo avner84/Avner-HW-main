@@ -1,0 +1,142 @@
+        body {
+            background: rgb(4, 5, 241);
+            background: radial-gradient(circle, rgba(4, 5, 241, 1) 0%, rgba(0, 0, 0, 1) 100%);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 400%;
+            padding: 1%;
+        }
+        
+        #search {
+            padding-top: 1.5%;
+            /* margin-left: 10%; */
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .input-group {
+            width: 20%;
+        }
+        
+        .form-control,
+        .btn-outline-secondary {
+            border: 1px solid white;
+        }
+        
+        .btn-outline-secondary {
+            font-weight: 700;
+            color: rgb(181, 179, 179);
+        }
+        
+        #movieViewer {
+            width: 75vw;
+            height: 70vh;
+            /* border: 1px solid white; */
+            margin: auto;
+            margin-top: 2%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            align-items: center;
+            justify-items: center;
+        }
+        
+        .cards {
+            width: 300px;
+            height: 350px;
+            border: 2px solid rgb(212, 210, 210);
+            border-radius: 20px;
+            /* margin: 20px; */
+            color: rgb(212, 210, 210);
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            user-select: none;
+        }
+        
+        .mainCard img {
+            height: 80%;
+            /* width: 100px; */
+            margin-top: 3%;
+            border: 2px solid rgb(212, 210, 210);
+        }
+        
+        .detailsCard>h5 {
+            padding-top: 5px;
+            top: 0;
+            text-align: center;
+        }
+        
+        .mainCard {
+            height: 87%;
+            display: flex;
+            justify-content: space-around;
+            /* border: 1px solid white; */
+        }
+        
+        .titelCard {
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .detailsCard {
+            padding: 5px 0px 5px 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        #btnMoreInfo {
+            cursor: pointer;
+            text-align: center;
+            background-color: rgb(212, 210, 210);
+            border-radius: 20px;
+            color: rgb(1, 2, 96);
+            padding: 5px 10px;
+            font-weight: bolder;
+            font-size: 0.8rem;
+            user-select: none;
+        }
+        
+        .modal-content {
+            height: 50vh;
+            background-origin: padding-box;
+            background-size: cover;
+            border: 3px solid white;
+            /* background-image: url("https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"); */
+            background-repeat: no-repeat;
+        }
+        
+        .modal-header {
+            border-bottom: 0;
+        }
+        
+        .modal-footer {
+            border-top: 0
+        }
+        
+        .modal-title {
+            color: aliceblue;
+            font-weight: 800;
+            background-color: rgb(1, 2, 96, 0.6);
+            -webkit-text-stroke: 1px black;
+            margin-top: 5%;
+            padding: 5px;
+        }
+        
+        .modal-body {
+            color: aliceblue;
+            background-color: rgb(1, 2, 96, 0.6);
+        }
+        
+        .plot {
+            margin-top: 5%;
+            overflow: auto;
+        }
+        
+        .btn-secondary {
+            background-color: #142880;
+        }

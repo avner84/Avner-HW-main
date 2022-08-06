@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      main {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #mainDiv {
+        border: solid gray 3px;
+        border-radius: 20px;
+        padding: 15px;
+        width: fit-content;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1;
+        grid-template-rows: 2;
+        gap: 10px;
+        box-shadow:5px 6px 16px 2px grey;
+      }
+
+      #mainDiv > i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: 1;
+        grid-template-rows: 3;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body style="background-color: aquamarine">
+    <main>
+      <div id="mainDiv">
+        <i class="fa-solid fa-dragon" style="align-items: center"></i>
+        <form action="">
+          <label
+            for="name"
+            style="font-size: 1.3rem; padding-bottom: 10px; text-align: center"
+            >What is your name?</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="fname"
+            value="EX: Avner Mushnik"
+            style="
+              font-size: 1.1rem;
+              margin-bottom: 10px;
+              width: 85%;
+              margin: auto;
+              display: block;
+            "
+          />
+          <div style="margin: 10px auto; width: 100%; padding-top: 5px;">
+            <input type="submit" value="OK" style="width: 47%; border-bottom-left-radius: 10px; background-color: greenyellow;" />
+            <input
+              type="button"
+              value="Cancle"
+              style="float: right; width: 47%;
+              border-bottom-right-radius: 10px; background-color: red;"
+            />
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
