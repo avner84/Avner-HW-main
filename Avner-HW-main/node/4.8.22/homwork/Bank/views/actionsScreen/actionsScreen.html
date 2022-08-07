@@ -11,12 +11,38 @@
 
 <body>
     <nav class="topnav">
-        <a href="#">Home</a>
-        <a href="#">Sign Up</a>
-        <a href="#">Login</a>
-        <a class="active" href="#">Actions Screen</a>
+        <a href="/">Home</a>
+        <a href="/signUp">Sign Up</a>
+        <a href="/login">Login</a>
+        <a class="active" href="/actionsScreen">Actions Screen</a>
     </nav>
     <h1>Actions Screen</h1>
+    <main>
+        <div id="accountBalance">
+            <p id="accountBalanceP"></p>
+        </div>
+        <div>
+            <h3>Deposit money into your account</h3>
+            <input type="number" id="depositInput" placeholder="Enter an amount to deposit">
+            <button type="submit" id="depositBtn">Deposit</button>
+        </div>
+        <div>
+            <h3>Withdraw money from your account</h3>
+            <input type="number" id="withdrawInput" placeholder="Enter an amount to withdraw">
+            <button type="submit" id withdrawBtn>Withdraw</button>
+        </div>
+        <div>
+            <h3 id="deleteAccount">Delete account</h3>
+            <p>To delete your account enter the secret code</p>
+            <input type="number" id="codeInput">
+            <button type="submit" id="deleteAccountBtn">Delete account</button>
+        </div>
+        <div>
+            <h3>Account balances by customer name</h3>
+            <input type="number" id="customerNameInput" placeholder="Enter a customer name">
+            <button type="submit" id="accountBalanceBtn">View account balance</button>
+        </div>
+    </main>
     <script src="actionsScreen.js"></script>
 </body>
 

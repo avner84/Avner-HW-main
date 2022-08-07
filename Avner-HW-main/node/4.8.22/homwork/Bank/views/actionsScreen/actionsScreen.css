@@ -16,6 +16,7 @@ h1 {
     text-align: center;
     margin-top: 100px;
     user-select: none;
+    margin-bottom: 10px;
 
 }
 
@@ -43,3 +44,38 @@ h1 {
     color: white;
     font-weight: 700;
 }
+
+/* main  {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+
+} */
+
+main div{
+    margin: auto;
+    width: 30%;
+    /* border: 3px solid green; */
+    padding: 10px;
+}
+
+input, button {
+    font-size: 1.2em;
+}
+
+#accountBalance p {
+font-size: xx-large;
+margin-bottom: 5px;
+}
+
+#deleteAccount{
+    color: red;
+}
+
+#accountBalanceBtn, #customerNameInput{
+    font-size: 1.2em;
+}
+

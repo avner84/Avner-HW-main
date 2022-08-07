@@ -11,12 +11,25 @@
 
 <body>
     <nav class="topnav">
-        <a href="#">Home</a>
-        <a href="#">Sign Up</a>
-        <a class="active" href="#">Login</a>
-        <a href="#">Actions Screen</a>
+        <a href="/">Home</a>
+        <a href="/signUp">Sign Up</a>
+        <a class="active" href="/login">Login</a>
+        <a href="/actionsScreen">Actions Screen</a>
     </nav>
     <h1>Login</h1>
+
+    <main>
+        <form action="">
+            <label for="uName"><b>User Name</b></label>
+            <input type="text" name="uName" required>
+
+            <label for="pass"><b>Password</b></label>
+            <input type="password" name="pass" required>
+
+            <input type="submit" value="Sign Up">
+        </form>
+    </main>
+
     <script src="login.js"></script>
 </body>
 

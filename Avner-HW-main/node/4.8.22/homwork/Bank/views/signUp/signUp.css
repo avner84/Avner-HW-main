@@ -1,45 +1,101 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    margin: 0;
-    height: 100vh;
-    background: rgb(206, 206, 238);
+  margin: 0;
+  height: 100vh;
+  background: rgb(206, 206, 238);
 
 }
 
+* {
+  box-sizing: border-box
+}
+
 h1 {
-    width: 400px;
-    margin: 0 auto;
-    color: rgb(11, 58, 99);
-    text-align: center;
-    margin-top: 100px;
-    user-select: none;
+  width: 400px;
+  margin: 0 auto;
+  color: rgb(11, 58, 99);
+  text-align: center;
+  margin-top: 100px;
+  user-select: none;
 
 }
 
 .topnav {
-    overflow: hidden;
-    background-color: rgb(41, 9, 99);
+  overflow: hidden;
+  background-color: rgb(41, 9, 99);
 }
 
 .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 .topnav a.active {
-    background-color: #398dba;
-    color: white;
-    font-weight: 700;
+  background-color: #398dba;
+  color: white;
+  font-weight: 700;
+}
+
+
+
+/* Full-width input fields */
+input[type=text],
+input[type=password],
+input[type=number] {
+  width: 40%;
+  padding: 15px;
+  margin: 5px 30% 22px  auto;
+  display: block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+input[type=submit] {
+  font-size: 1.5em;
+}
+
+form {
+  width: 50%;
+  margin: 20% auto;
+    margin-top: 60px;
+  
+  position: absolute;
+ text-align: center;
+ 
+}
+
+main {
+  
+display: flex;
+justify-items: center ;
+justify-content: center;
+  
+}
+
+input[type=number]{
+  margin-bottom: 5px;
+}
+
+
+input[type=submit]{
+  margin-top: 25px;
 }
