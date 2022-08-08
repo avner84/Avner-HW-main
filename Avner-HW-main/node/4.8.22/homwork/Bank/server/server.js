@@ -112,17 +112,77 @@ app.post("/api/login", async (req, res) => {
 
 
 app.get('/api/actionsScreen1', (req, res) => {
-    res.send({ sumOfconnectedCustomer });
+    res.send({ connectedCustomer });
 })
 
 app.post('/api/actionsScreen2', (req, res) => {
-    console.log("hi from input");
- console.log("req.body: ", req.body);
- console.log("req.body.AmountToDeposit: ", req.body.AmountToDeposit);
- //להוסיף את הסכום שהתקבל לסכום הלקוח הנוכחי ולשמור אותו בקובץ
-res.end();
+    // console.log("hi from input");
+    // console.log("req.body: ", req.body);
+    // console.log("req.body.AmountToDeposit: ", req.body.AmountToDeposit);
+
+    const AmountToDeposit = parseInt(req.body.AmountToDeposit);
+    sumOfconnectedCustomer += AmountToDeposit;
+    connectedCustomer.sum = sumOfconnectedCustomer;
+
+    // console.log('connectedCustomer :', connectedCustomer);
+    let msg = "";
+    let result = false;
+    let depositResult = customersMethods.updateAccountBalance(connectedCustomer);
+    if (depositResult) {
+        msg = "Deposit successful. Your account balance has been successfully updated";
+        result = true;
+    }
+    else { msg = "There was an error with the deposit. Please try again later or contact your banker." }
+
+    res.send({ msg, result, connectedCustomer });
 })
 
+app.post('/api/actionsScreen3', (req, res) => {
+    const withdrawalAmount = parseInt(req.body.withdrawalAmount);
+    sumOfconnectedCustomer -= withdrawalAmount;
+    connectedCustomer.sum = sumOfconnectedCustomer;
+
+    let msg = "";
+    let result = false;
+    let depositResult = customersMethods.updateAccountBalance(connectedCustomer);
+    if (depositResult) {
+        msg = "Withdrawal was successful. Your account balance has been successfully updated";
+        result = true;
+    }
+    else { msg = "There was an error with the Withdrawal. Please try again later or contact your banker." }
+
+    res.send({ msg, result, connectedCustomer });
+
+})
+
+
+app.post('/api/actionsScreen4', async (req, res) => {
+    const codeFromClient = req.body.code;
+    const customerFromClient = req.body.connectedCustomer;
+
+    const resultFromCodeCheck = await customersMethods.codeCheck(codeFromClient, customerFromClient.code);
+    res.send({ resultFromCodeCheck });
+})
+
+app.post('/api/actionsScreen5', async (req, res) => {
+
+    const customerForDelete = req.body.connectedCustomerFromClient;
+    const uNameCustomerForDelete = customerForDelete.uName;
+    const resultFromDelet = customersMethods.deleteCustomer(uNameCustomerForDelete);
+
+    if (resultFromDelet) {
+        res.clearCookie('loginVerification');        
+    }
+    res.send({ resultFromDelet });
+
+})
+
+
+app.post('/api/actionsScreen6', async (req, res) => {
+    const userNameCustomer = req.body.userName;
+   const checkAccountBalanceResult = customersMethods.checkAccountBalance(userNameCustomer);
+   res.send({ checkAccountBalanceResult });
+})
 
 
 app.listen(3030, () => {

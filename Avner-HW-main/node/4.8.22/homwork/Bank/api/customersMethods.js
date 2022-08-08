@@ -19,7 +19,7 @@ async function saveCustomer(customer) {
 
     customer.pass = newPass;
     customer.code = newCode;
-    customer.sum= 500;
+    customer.sum = 500;
 
     const customersList = getCustomers();
     const objCustomers = JSON.parse(customersList);
@@ -44,31 +44,90 @@ function checkIfUsernameAvailable(userName) {
 
 
 async function loginCheck(user) {
- 
-        const customersList = getCustomers();
-        const objCustomers = JSON.parse(customersList);
 
-        for (let i = 0; i < objCustomers.length; i++) {
+    const customersList = getCustomers();
+    const objCustomers = JSON.parse(customersList);
 
-            if (objCustomers[i].uName == user.uName) {
-                const compareResult = await bcrypt.compare(user.pass, objCustomers[i].pass);
-    
-                if (compareResult) {
-                    result = true;
-                    return {
-                        result,
-                        user: objCustomers[i]
-                    }
-                     
+    for (let i = 0; i < objCustomers.length; i++) {
+
+        if (objCustomers[i].uName == user.uName) {
+            const compareResult = await bcrypt.compare(user.pass, objCustomers[i].pass);
+
+            if (compareResult) {
+                result = true;
+                return {
+                    result,
+                    user: objCustomers[i]
                 }
+
             }
         }
+    }
 
     return {
         result: false
     };
 }
 
+function updateAccountBalance(customer) {
+
+    const customersList = getCustomers();
+    const objCustomers = JSON.parse(customersList);
+
+    for (let i = 0; i < objCustomers.length; i++) {
+        if (objCustomers[i].uName == customer.uName) {
+            objCustomers[i].sum = customer.sum;
 
 
-module.exports = { saveCustomer, checkIfUsernameAvailable, loginCheck };
+            const customersListStr = JSON.stringify(objCustomers);
+            fs.writeFileSync(dataPath + "/customers.json", customersListStr);
+            return true;
+        }
+    }
+
+    return false;
+
+
+}
+
+
+async function codeCheck(codeFromClient, codeFromServer) {
+    const compareResult = await bcrypt.compare(codeFromClient, codeFromServer);
+    return compareResult;
+}
+
+
+function deleteCustomer(uNameCustomerForDelete) {
+
+    const customersList = getCustomers();
+    const objCustomers = JSON.parse(customersList);
+    for (let i = 0; i < objCustomers.length; i++) {
+        if (objCustomers[i].uName == uNameCustomerForDelete) {
+            objCustomers.splice(i, 1);
+            const customersListStr = JSON.stringify(objCustomers);
+            fs.writeFileSync(dataPath + "/customers.json", customersListStr);
+            return true;
+
+        }
+    }
+    return false;
+}
+
+function checkAccountBalance(userName) {
+
+    const customersList = getCustomers();
+    const objCustomers = JSON.parse(customersList);
+
+    for (let i = 0; i < objCustomers.length; i++) {
+        if (objCustomers[i].uName == userName) {
+            return {
+                result: true,
+                sum: objCustomers[i].sum
+            }
+        }
+    }
+
+    return {result: false}
+}
+
+module.exports = { saveCustomer, checkIfUsernameAvailable, loginCheck, updateAccountBalance, codeCheck, deleteCustomer, checkAccountBalance };
