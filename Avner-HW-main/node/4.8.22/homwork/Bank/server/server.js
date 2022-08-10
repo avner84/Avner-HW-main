@@ -111,20 +111,16 @@ app.post("/api/login", async (req, res) => {
 
 
 
-app.get('/api/actionsScreen1', (req, res) => {
+app.get('/api/actionsScreen/loadPage', (req, res) => {
     res.send({ connectedCustomer });
 })
 
-app.post('/api/actionsScreen2', (req, res) => {
-    // console.log("hi from input");
-    // console.log("req.body: ", req.body);
-    // console.log("req.body.AmountToDeposit: ", req.body.AmountToDeposit);
-
+app.post('/api/actionsScreen/deposit', (req, res) => {
+  
     const AmountToDeposit = parseInt(req.body.AmountToDeposit);
     sumOfconnectedCustomer += AmountToDeposit;
     connectedCustomer.sum = sumOfconnectedCustomer;
-
-    // console.log('connectedCustomer :', connectedCustomer);
+   
     let msg = "";
     let result = false;
     let depositResult = customersMethods.updateAccountBalance(connectedCustomer);
@@ -137,7 +133,7 @@ app.post('/api/actionsScreen2', (req, res) => {
     res.send({ msg, result, connectedCustomer });
 })
 
-app.post('/api/actionsScreen3', (req, res) => {
+app.post('/api/actionsScreen/withdrawal', (req, res) => {
     const withdrawalAmount = parseInt(req.body.withdrawalAmount);
     sumOfconnectedCustomer -= withdrawalAmount;
     connectedCustomer.sum = sumOfconnectedCustomer;
@@ -156,7 +152,7 @@ app.post('/api/actionsScreen3', (req, res) => {
 })
 
 
-app.post('/api/actionsScreen4', async (req, res) => {
+app.post('/api/actionsScreen/checkCodeBeforeDelete', async (req, res) => {
     const codeFromClient = req.body.code;
     const customerFromClient = req.body.connectedCustomer;
 
@@ -164,7 +160,7 @@ app.post('/api/actionsScreen4', async (req, res) => {
     res.send({ resultFromCodeCheck });
 })
 
-app.post('/api/actionsScreen5', async (req, res) => {
+app.post('/api/actionsScreen/deleteAccount', async (req, res) => {
 
     const customerForDelete = req.body.connectedCustomerFromClient;
     const uNameCustomerForDelete = customerForDelete.uName;
@@ -178,7 +174,7 @@ app.post('/api/actionsScreen5', async (req, res) => {
 })
 
 
-app.post('/api/actionsScreen6', async (req, res) => {
+app.post('/api/actionsScreen/viewCustomerAccounts', async (req, res) => {
     const userNameCustomer = req.body.userName;
    const checkAccountBalanceResult = customersMethods.checkAccountBalance(userNameCustomer);
    res.send({ checkAccountBalanceResult });

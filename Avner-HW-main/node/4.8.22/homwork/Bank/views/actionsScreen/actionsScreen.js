@@ -15,7 +15,7 @@ let connectedCustomer = {};
 
 window.addEventListener("load", () => {
 
-    fetch("/api/actionsScreen1")
+    fetch("/api/actionsScreen/loadPage")
         .then((res) => res.json()).then((res) => {
             connectedCustomer = res.connectedCustomer;
             accountBalanceP.innerHTML = `Hi ${res.connectedCustomer.name}, <br> account balance is NIS ${res.connectedCustomer.sum}`
@@ -28,7 +28,7 @@ depositBtn.addEventListener("click", () => {
     if (depositInput.value > 0) {
         const jsonData = { AmountToDeposit: depositInput.value };
 
-        fetch("/api/actionsScreen2", {
+        fetch("/api/actionsScreen/deposit", {
             method: "POST",
             body: JSON.stringify(jsonData),
             headers: {
@@ -57,7 +57,7 @@ withdrawBtn.addEventListener("click", () => {
     if ((connectedCustomer.sum - withdrawInput.value) >= 0) {
         const jsonData = { withdrawalAmount: withdrawInput.value };
 
-        fetch("/api/actionsScreen3", {
+        fetch("/api/actionsScreen/withdrawal", {
             method: "POST",
             body: JSON.stringify(jsonData),
             headers: {
@@ -85,7 +85,7 @@ deleteAccountBtn.addEventListener("click", () => {
 
     const jsonData = { code: codeInput.value, connectedCustomer };
 
-    fetch("/api/actionsScreen4", {
+    fetch("/api/actionsScreen/checkCodeBeforeDelete", {
         method: "POST",
         body: JSON.stringify(jsonData),
         headers: {
@@ -99,7 +99,7 @@ deleteAccountBtn.addEventListener("click", () => {
             This operation is irreversible!`)) {
 
                     const data = { connectedCustomerFromClient: connectedCustomer };
-                    fetch("/api/actionsScreen5", {
+                    fetch("/api/actionsScreen/deleteAccount", {
                         method: "POST",
                         body: JSON.stringify(data),
                         headers: {
@@ -109,6 +109,7 @@ deleteAccountBtn.addEventListener("click", () => {
                         .then((res) => res.json()).then((res) => {
                             if (res.resultFromDelet == true) {
                                 alert("The customer account has been successfully removed.");
+                                window.location = "http://localhost:3030/";
 
                             }
                             else {
@@ -127,7 +128,7 @@ accountBalanceBtn.addEventListener("click", () => {
 
     const jsonData = { userName: customerNameInput.value };
 
-    fetch("/api/actionsScreen6", {
+    fetch("/api/actionsScreen/viewCustomerAccounts", {
         method: "POST",
         body: JSON.stringify(jsonData),
         headers: {

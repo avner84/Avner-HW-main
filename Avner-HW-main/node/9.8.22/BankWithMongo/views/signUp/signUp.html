@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signUp.css">
+    <title>Sign up</title>
+</head>
+
+<body>
+    <nav class="topnav">
+        <a href="/">Home</a>
+        <a class="active" href="/signUp">Sign Up</a>
+        <a href="/login">Login</a>
+        <a href="/actionsScreen">Actions Screen</a>
+    </nav>
+    <h1>Sign up</h1>
+
+    <main>
+        <form action="">
+            <label for="name"><b>Name</b></label>
+            <input type="text" name="name" required>
+
+            <label for="uName"><b>User Name</b></label>
+            <input type="text" name="uName" required>
+
+            <label for="pass"><b>Password</b></label>
+            <input type="password" name="pass" required>
+
+            <label for="code" ><b>Verification Code</b></label>
+            <input type="number" name="code" pattern="[0-9]{4}" required>
+            <small>The verification code must be four digits long.</small><br>
+
+            <input type="submit" value="Sign Up">
+        </form>
+
+        <button id="getDbBtn">get DB</button>
+    
+    </main>
+    <script src="signUp.js"></script>
+</body>
+
+</html>
