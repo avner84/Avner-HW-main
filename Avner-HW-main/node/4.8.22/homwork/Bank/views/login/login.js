@@ -20,8 +20,11 @@ form.addEventListener("submit", (event)=>{
     .then((res)=>res.json()).then((res)=>{
         if (res.result == true) {
             form.reset()
+            alert(res.msg);
+            window.location = "http://localhost:3030/actionsScreen/";
         }
-                alert(res.msg)});
+        else{alert(res.msg)}
+                });
                 
 
 });

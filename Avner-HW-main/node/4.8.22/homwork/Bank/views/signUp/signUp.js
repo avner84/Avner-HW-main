@@ -22,6 +22,7 @@ form.addEventListener("submit", (event) => {
             alert(res.msg);
             if (res.result == true) {
                 form.reset()
+                window.location = "http://localhost:3030/login/";
             }
         });
 
