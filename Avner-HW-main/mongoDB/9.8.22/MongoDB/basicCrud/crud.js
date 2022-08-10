@@ -1,5 +1,5 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://avner84:avner300@cluster0.gcpl9ub.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://avner84:pass123@cluster0.gcpl9ub.mongodb.net/?retryWrites=true&w=majority";
 
 
 async function main() {
@@ -22,7 +22,7 @@ async function main() {
         // await collection.deleteMany({name: "Moshe"});
 
         //UPDATE
-        await collection.updateOne({ name: "Avner" }, { $set: { age: 38 } })
+        await collection.updateOne({ name: "Avner" }, { $set: { age: 389 } })
         // await collection.updateMany()
 
         await client.close();
