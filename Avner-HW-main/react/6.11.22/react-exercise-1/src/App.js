@@ -1,62 +1,6 @@
-// import { useState } from "react"
-
 function Component() {
 
-   // const [name, setName] = useState()
-   // const [count, setCount] = useState(0)
-   // const [inputValue, setInputValue] = useState("")
-   // const [show, setShow] = useState(false)
-
-
-   // function changeName(event) {
-   //    const names = ["Sami", "Eli", "Moshe"]
-   //    setName(names[count])
-   //    setCount(count + 1)
-
-   // }
-
-   // function inputChange(event) {
-   //    console.log(event.target.value)
-   //    setInputValue(event.target.value)
-
-   //    if (show) {
-   //       setShow(false)
-   //    }
-   // }
-
-
-   // function showInputValue() {
-   //    setShow(true)
-   // }
-
-   // function toggleShow() {
-   //    setShow(!show)
-   // }
-
-   // return (
-   //    <div className="container">
-   //       <h1 className="title">Hello</h1>
-   //       <p>{name}</p>
-   //       <p>{count}</p>
-   //       <p style={{ display: show ? "block" : "none" }} >{inputValue}</p>
-
-   //       <p className={show ? "show" : "not_show"}> Show </p>
-   //       <button onClick={toggleShow} >Toggle Show</button>
-
-   //       <button onClick={changeName} >Change Name</button>
-
-   //       <button onClick={showInputValue}>Get Name From Input</button>
-   //       <input type="text" onChange={inputChange} />
-   //    </div>
-   // );
-
-   // const allSquare = document.querySelectorAll(".square");
-
-   // allSquare.forEach(element => {
-   //    element.addEventListener("click", setXorO)
-   // });
-
-   let flag = true;
+    let flag = true;
 
    function setXorO(event) {
 
