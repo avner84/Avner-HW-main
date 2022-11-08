@@ -1,28 +1,7 @@
 import { useState } from "react"
 
 function Component() {
-   
 
-   // function checksIfBoardIsFull() {
-   //    const allSquare = document.querySelectorAll(".square");
-
-   //    let avoid = 0;
-
-   //    allSquare.forEach(element => {
-
-   //        if (element.textContent === "") {
-   //            avoid++;
-   //        }
-   //    });
-
-   //    if (avoid===0){
-   //        setTimeout(function() {alert ("game over")}, 200);
-
-   //    }
-
-
-   // }
-   
    const [value1, setValue1] = useState("")
    const [value2, setValue2] = useState("")
    const [value3, setValue3] = useState("")
@@ -36,15 +15,13 @@ function Component() {
    const [flag, changeFlag] = useState(true)
    const [emptySquares, setEmptySquaresׂׂ] = useState(9)
 
-   
-
 
    function setXorO(event) {
 
       const idSquare = event.target.id;
 
       DoesSquareClick(idSquare)
-    
+
       switch (idSquare) {
          case "div1":
             setValue1(flag === true ? "X" : "O");
@@ -87,55 +64,29 @@ function Component() {
             break;
       }
 
-      // checksIfBoardIsFull()
-      
    }
 
+   function DoesSquareClick(idSquare) {
 
-   function DoesSquareClick(idSquare){
-      
       const square = document.getElementById(idSquare);
-      
-      if (square.textContent===""){
-         setEmptySquaresׂׂ(emptySquares-1)
 
+      if (square.textContent === "") {
+         setEmptySquaresׂׂ(emptySquares - 1)
       }
-      console.log(emptySquares);
-      if (emptySquares===1){
-          setTimeout(function() {alert ("game over")}, 200);
-
-      }
-
    }
 
+   
+   function IsGameOver() {
+      console.log(emptySquares);
+      if (emptySquares === 0) {
+         setTimeout(function () { alert("game over") }, 200);
+         return;
+      }
+   }
 
-   // function checksIfBoardIsFull() {
-   //    const allSquare = document.querySelectorAll(".square");
-
-      
-      
-
-   //    allSquare.forEach(element => {
-         
-
-   //        if (element.textContent!== "") {
-   //          setEmptySquaresׂׂ(emptySquares-1)
-   //        }
-         
-   //    });
-   //    console.log('emptySquares :', emptySquares);
-
-   //    if (emptySquares===0){
-   //        setTimeout(function() {alert ("game over")}, 200);
-
-   //    }
-      
-   // }
-
-
+   IsGameOver()
 
    return (
-
       <div className="board">
          <div className="square" id="div1" onClick={setXorO}>{value1}</div>
          <div className="square" id="div2" onClick={setXorO}>{value2}</div>
