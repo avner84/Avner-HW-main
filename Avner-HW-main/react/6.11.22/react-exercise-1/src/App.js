@@ -1,68 +1,71 @@
 import { useState } from "react"
 
-function Component() {
 
-   const [value1, setValue1] = useState("")
-   const [value2, setValue2] = useState("")
-   const [value3, setValue3] = useState("")
-   const [value4, setValue4] = useState("")
-   const [value5, setValue5] = useState("")
-   const [value6, setValue6] = useState("")
-   const [value7, setValue7] = useState("")
-   const [value8, setValue8] = useState("")
-   const [value9, setValue9] = useState("")
+
+
+
+function Component() {
+   const [squres,setSqures]= useState(Array(9).fill(""))
 
    const [flag, changeFlag] = useState(true)
    const [emptySquares, setEmptySquaresׂׂ] = useState(9)
 
 
-   function setXorO(event) {
+   function setXorO(index) {
+   let isX= flag  ? "X" : "O"
 
-      const idSquare = event.target.id;
+squres[index]=isX
+changeFlag(!flag)
 
-      DoesSquareClick(idSquare)
+console.log(squres)
 
-      switch (idSquare) {
-         case "div1":
-            setValue1(flag === true ? "X" : "O");
-            changeFlag(!flag)
-            break;
-         case "div2":
-            setValue2(flag === true ? "X" : "O");
-            changeFlag(!flag)
-            break;
-         case "div3":
-            setValue3(flag === true ? "X" : "O");
-            changeFlag(!flag)
-            break;
-         case "div4":
-            setValue4(flag === true ? "X" : "O");
-            changeFlag(!flag)
-            break;
-         case "div5":
-            setValue5(flag === true ? "X" : "O");
-            changeFlag(!flag)
-            break;
-         case "div6":
-            setValue6(flag === true ? "X" : "O");
-            changeFlag(!flag)
-            break;
-         case "div7":
-            setValue7(flag === true ? "X" : "O");
-            changeFlag(!flag)
-            break;
-         case "div8":
-            setValue8(flag === true ? "X" : "O");
-            changeFlag(!flag)
-            break;
-         case "div9":
-            setValue9(flag === true ? "X" : "O");
-            changeFlag(!flag)
-            break;
+      // const idSquare = event.target.id;
 
-         default:
-            break;
-      }
+      // let isX= flag === true ? "X" : "O"
+
+      // DoesSquareClick(idSquare)
+
+      // switch (idSquare) {
+      //    case "div1":
+      //       setValue1(isX);
+      //       changeFlag(!flag)
+      //       break;
+      //    case "div2":
+      //       setValue2(isX);
+      //       changeFlag(!flag)
+      //       break;
+      //    case "div3":
+      //       setValue3(isX);
+      //       changeFlag(!flag)
+      //       break;
+      //    case "div4":
+      //       setValue4(isX);
+      //       changeFlag(!flag)
+      //       break;
+      //    case "div5":
+      //       setValue5(isX);
+      //       changeFlag(!flag)
+      //       break;
+      //    case "div6":
+      //       setValue6(isX);
+      //       changeFlag(!flag)
+      //       break;
+      //    case "div7":
+      //       setValue7(isX);
+      //       changeFlag(!flag)
+      //       break;
+      //    case "div8":
+      //       setValue8(isX);
+      //       changeFlag(!flag)
+      //       break;
+      //    case "div9":
+      //       setValue9(isX);
+      //       changeFlag(!flag)
+      //       break;
+
+      //    default:
+      //       break;
+      // }
 
    }
 
@@ -77,26 +80,34 @@ function Component() {
 
    
    function IsGameOver() {
-      console.log(emptySquares);
-      if (emptySquares === 0) {
-         setTimeout(function () { alert("game over") }, 200);
-         return;
-      }
+       for(const s of squres){
+         if(s === ""){ 
+            return false
+         }
+       }
+
+       return true
+      // console.log(emptySquares);
+      // if (emptySquares === 0) {
+      //    setTimeout(function () { alert("game over") }, 200);
+      //    return;
+      // }
    }
 
-   IsGameOver()
+  const isOver=  IsGameOver()
 
+  if(isOver) alert("over")
    return (
       <div className="board">
-         <div className="square" id="div1" onClick={setXorO}>{value1}</div>
-         <div className="square" id="div2" onClick={setXorO}>{value2}</div>
-         <div className="square" id="div3" onClick={setXorO}>{value3}</div>
-         <div className="square" id="div4" onClick={setXorO}>{value4}</div>
-         <div className="square" id="div5" onClick={setXorO}>{value5}</div>
-         <div className="square" id="div6" onClick={setXorO}>{value6}</div>
-         <div className="square" id="div7" onClick={setXorO}>{value7}</div>
-         <div className="square" id="div8" onClick={setXorO}>{value8}</div>
-         <div className="square" id="div9" onClick={setXorO}>{value9}</div>
+         <div className="square"  onClick={(e)=> setXorO(0)}>{squres[0]}</div>
+         <div className="square"  onClick={(e)=> setXorO(1)}>{squres[1]}</div>
+         <div className="square"  onClick={(e)=> setXorO(2)}>{squres[2]}</div>
+         <div className="square"  onClick={(e)=> setXorO(3)}>{squres[3]}</div>
+         <div className="square"  onClick={(e)=> setXorO(4)}>{squres[4]}</div>
+         <div className="square"  onClick={(e)=> setXorO(5)}>{squres[5]}</div>
+         <div className="square"  onClick={(e)=> setXorO(6)}>{squres[6]}</div>
+         <div className="square"  onClick={(e)=> setXorO(7)}>{squres[7]}</div>
+         <div className="square"  onClick={(e)=> setXorO(8)}>{squres[8]}</div>
       </div>
    )
 }

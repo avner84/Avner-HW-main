@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  color: red;
+}
+
+.show {
+  display: block;
+}
+
+.not_show {
+  display: none;
+}
+
+.board_container {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 2rem auto;
+  width: 300px;
+}
+
+.board .cell {
+  border: 1px solid black;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.todo_form {}
+
+input {}
+
+.todos_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.todo_list {
+  margin-top: 1rem;
+}
+
+.todo_item {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: whitesmoke;
+}
+
+
+.users_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.users_list {}
+
+.post_item,
+.user_item {
+  background-color: whitesmoke;
+  padding: 1rem;
+  
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden_list
+{
+  display: none;
+}
