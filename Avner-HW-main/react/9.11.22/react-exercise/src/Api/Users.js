@@ -8,11 +8,12 @@ import UsersList from "./UsersList"
 export default function Users() {
 
    const [users, setUsers] = useState([])
-   const [posts, setPosts] = useState([])
+
    const [postsListsClassName, setPostsListsClassName] = useState("posts_list")
    const [todosListsClassName, setTodosListsClassName] = useState("todos_list")
    const [userId, setUserId] = useState(null)
-
+   
+   const [posts, setPosts] = useState([])
    const [todos, setTodos] = useState([])
 
    useEffect(() => {
@@ -30,7 +31,7 @@ export default function Users() {
             .then((response) => response.json())
             .then((result) => {
                setPosts(result)
-            })
+            })          
       }
    }, [userId])
 
@@ -58,29 +59,22 @@ export default function Users() {
       setPostsListsClassName("hidden_list")
       setTodosListsClassName("todos_list")
       setUserId(_userId)
-
    }
 
    return (
       <div className="users_container">
-
-
-
          <UsersList
             users={users}
             showPostsById={showPostsById}
             showTodosById={showTodosById}
          />
-
-
-
          <PostsLists
             posts={posts}
             postsListsClassName={postsListsClassName}
          />
          <TodosList
-         todos={todos}
-         todosListsClassName={todosListsClassName}
+            todos={todos}
+            todosListsClassName={todosListsClassName}
          />
 
       </div>

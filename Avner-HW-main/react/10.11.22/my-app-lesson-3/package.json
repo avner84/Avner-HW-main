@@ -1,5 +1,5 @@
 {
-  "name": "react-exercise",
+  "name": "my-app-lesson-3",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,8 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "prop-types": "^15.8.1"
   }
 }

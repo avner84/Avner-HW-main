@@ -13,7 +13,6 @@ export default function UsersList(props) {
                         user={user}
                     />
                 )
-
             })}
         </div>
     )
