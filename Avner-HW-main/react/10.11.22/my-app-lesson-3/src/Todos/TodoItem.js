@@ -9,7 +9,7 @@ function TodoItem(props) {
          <span>{todo.id}.</span>
          <span onClick={() => props.completeTodo(todo.id)} style={{ color: todo.completed ? "green" : "red" }} >{todo.text}</span>
 
-         <Button text="X" color="black" handler={() => props.deleteTodo(todo.id)} />
+         <Button text="X"  handler={() => props.deleteTodo(todo.id)} />
       </div>
    )
 }

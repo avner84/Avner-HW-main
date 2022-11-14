@@ -19,7 +19,9 @@ function TodoList(props) {
 }
 
 TodoList.prototype={
-   todos: PropTypes.object
+   todos: PropTypes.array.isRequired,
+   deleteTodo: PropTypes.func.isRequired,
+   completeTodo: PropTypes.func.isRequired
 }
 
 export default TodoList

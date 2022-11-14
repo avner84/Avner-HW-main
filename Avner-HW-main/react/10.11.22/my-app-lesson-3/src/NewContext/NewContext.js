@@ -9,9 +9,11 @@ const [color, setColor] = useState("white")
     function changeBackgroundColor(_color){
         setColor(_color)
     }
-    document.querySelector("body").style.backgroundColor=color
+
+
+    document.body.style.backgroundColor=color
       return (
-    <ColorContext.Provider value={{ changeBackgroundColor:changeBackgroundColor }}>
+  <ColorContext.Provider value={{ changeBackgroundColor:changeBackgroundColor }}>
     {props.children}
  </ColorContext.Provider>
   )

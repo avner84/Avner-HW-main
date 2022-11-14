@@ -17,7 +17,10 @@ export default function MoviesContextProvider(props) {
 
    function removeMovie() {
 
-      setMovies(movies.filter((element, index)=>index!==0))
+      // setMovies(movies.filter((element, index)=>index!==0))
+const newMovies = [...movies]
+newMovies.shift()
+      setMovies(newMovies)
    }
 
    return (

@@ -13,7 +13,6 @@ export default function BackgroundColor() {
             <Button
                 color="white"
                 text="Change the background color to white"
-
             />
         </div>
     )

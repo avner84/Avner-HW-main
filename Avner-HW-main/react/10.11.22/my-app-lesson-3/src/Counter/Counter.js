@@ -10,8 +10,12 @@ export default function Counter() {
         if(actionType==="plus"){
             setCounter(counter_var+1)
         }
-        else if ((actionType==="minus")){
+        else if (actionType==="minus"){
             setCounter(counter_var-1)
+        }
+
+        else if(actionType==="reset"){
+          setCounter(0)
         }
 
     }
@@ -28,6 +32,11 @@ export default function Counter() {
     changeCpunter={changeCpunter}
     actionType="minus"
     text="Counter Down"
+    />
+       <Button
+    changeCpunter={changeCpunter}
+    actionType="reset"
+    text="Reset Counter"
     />
     </div>
   )

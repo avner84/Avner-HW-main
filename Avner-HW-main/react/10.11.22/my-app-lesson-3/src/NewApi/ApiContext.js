@@ -1,46 +1,47 @@
 
 
 
-import { useEffect, useState, createContext} from "react"
+import { useEffect, useState, createContext } from "react"
 
 export const ApiContext = createContext(null)
 
 
 export default function ApiContextProvider(props) {
 
-const [urlPlay, setUrlPlay] = useState(null)
-const [jokes, setJokes] = useState([])
+  const [jokes, setJokes] = useState([])
 
-useEffect(() => {
-    if(urlPlay !== null)
-    {fetch("https://official-joke-api.appspot.com/jokes/ten")
-       .then((response) => response.json())
-       .then((result) => {
-          console.log(result)
-          setJokes(result)
+  useEffect(() => {
+    getJokes()
+  }, [])
+
+  function getJokes() {
+    fetch("https://official-joke-api.appspot.com/jokes/ten")
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result)
+        setJokes(result)
         //   setUsers(result)
-       })
-       .catch((error) => {
+      })
+      .catch((error) => {
         //   setError("Something went wrong")
-       })}
+      })
+  }
 
- }, [urlPlay])
-
- function PlayUrlFetch(){
-    if (urlPlay===true){
-        setUrlPlay(false)
-    }
-    else {
-        setUrlPlay(true)
-    }
-    
- }
+  function PlayUrlFetch() {
+    // if (urlPlay===true){
+    //     setUrlPlay(false)
+    // }
+    // else {
+    //     setUrlPlay(true)
+    // }
+    getJokes()
+  }
 
 
   return (
-    <ApiContext.Provider value={{ PlayUrlFetch: PlayUrlFetch, jokes:jokes }}>
-             {props.children}
- </ApiContext.Provider>
-   
+    <ApiContext.Provider value={{ PlayUrlFetch: PlayUrlFetch, jokes: jokes }}>
+      {props.children}
+    </ApiContext.Provider>
+
   )
 }

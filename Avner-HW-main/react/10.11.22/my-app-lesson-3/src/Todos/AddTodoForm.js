@@ -3,6 +3,8 @@ import Button from "./Button"
 import { PropTypes } from 'prop-types';
 
 
+
+
 function AddTodoForm(props) {
    const input = useRef()
 
@@ -27,8 +29,7 @@ function AddTodoForm(props) {
 }
 
 AddTodoForm.propTypes ={
-   handleSubmit:  PropTypes.func,
-   input: PropTypes.string
+   addTodo:  PropTypes.func,
 }
 
 export default AddTodoForm

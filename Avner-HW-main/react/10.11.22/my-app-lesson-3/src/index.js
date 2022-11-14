@@ -15,23 +15,25 @@ import NewApi from './NewApi/NewApi';
 import NewContext from './NewContext/NewContext';
 import BackgroundColor from './NewContext/BackgroundColor';
 
+import {BrowserRooter} from "react-router-dom"
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
+   <BrowserRooter>
+   <App />
+   </BrowserRooter>
 
 
 //  <NewContext>
 //    <BackgroundColor/>
 // </NewContext> 
   
-
-
-
-   <ApiContextProvider>
-      <NewApi/>
-   </ApiContextProvider>
-     // <Counter/>
+// <ApiContextProvider>
+//       <NewApi/>
+//    </ApiContextProvider>
+   //   <Counter/>
    // <MoviesContextProvider>
    //    <Movies />
    // </MoviesContextProvider>

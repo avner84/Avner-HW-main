@@ -32,11 +32,14 @@ export default function Todos(props) {
    return (
       <div className="todos_container">
          <AddTodoForm addTodo={onAddTodo} />
+
          <TodoList
             todos={todos}
             deleteTodo={onDeleteTodo}
             completeTodo={onCompleted}
          />
+
+
       </div>
    )
 }
