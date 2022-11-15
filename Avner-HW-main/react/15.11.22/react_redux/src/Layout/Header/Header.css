@@ -1,0 +1,25 @@
+header {
+   height: 7vh;
+   padding: 1rem;
+   background-color: rgb(39, 33, 46);
+   display: flex;
+   align-items: center;
+}
+
+nav {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+nav a {
+   font-weight: 700;
+}
+
+nav a:hover {
+   color: rgb(202, 65, 92);
+}
+
+nav a.active {
+   color: crimson;
+}

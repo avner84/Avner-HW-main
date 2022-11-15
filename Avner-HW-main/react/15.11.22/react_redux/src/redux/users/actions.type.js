@@ -1,0 +1,4 @@
+export const USERS_ACTIONS_TYPES = {
+   GET_USERS: "GET_USERS",
+   GET_USERS_FAIL: "GET_USERS_FAIL"
+}

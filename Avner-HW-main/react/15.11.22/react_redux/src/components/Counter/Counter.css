@@ -1,0 +1,10 @@
+.counter_container {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.counter_actions {
+   display: flex;
+   justify-content: space-between;
+}
