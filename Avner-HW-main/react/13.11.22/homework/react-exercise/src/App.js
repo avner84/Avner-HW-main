@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Input from "./Input";
 
 function App() {
@@ -9,6 +9,8 @@ function App() {
     const [lNameSmallerText, setLnameSmallerText] = useState("");
     const [classNameShowInputsDiv, setClassNameShowInputsDiv] = useState("hidden");
 
+    const fName = useRef();
+// {current: input}
 
     function showValues(e) {
         e.preventDefault()
@@ -16,7 +18,7 @@ function App() {
         setFnameSmallerText("")
         setLnameSmallerText("")
 
-
+console.log(fName.current.value)
 
         // console.log("fNameSmallerText.length: ", lNameSmallerText.length);
         if ((fNameInputValue.length > 5) && (lNameInputValue.length > 5)) {
@@ -42,13 +44,13 @@ function App() {
             <div className="containerFrom">
                 <form action="" onSubmit={showValues}>
                     <label>First name:</label><br />
-
-                    <Input
+<input   ref={fName}/>
+                    {/* <Input
                         type="text"
                         id="fname"
                         value={fNameInputValue}
                         onChange={(e) => setFnameInputValue(e.target.value)}
-                    />
+                    /> */}
                     <br />
                     <small>{fNameSmallerText}</small><br />
                     <label>Last name:</label><br />
